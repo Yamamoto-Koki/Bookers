@@ -5,6 +5,7 @@
   <p>タイトル</p>
   <span>
     <%= list.title %>
+    <%= list.body %>
 
     <%= link_to "show", list_path(list.id) %>
 
@@ -17,6 +18,14 @@
 
 
 <h1>New book</h1>
+<% if @list.errors.any? %>
+  <%= @list.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <!-- form_with部分 -->
 <%= form_with model: @list, url: '/lists', method: :post do |f| %>
   <h4>title</h4>
