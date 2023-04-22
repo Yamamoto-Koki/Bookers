@@ -58,6 +58,7 @@ header {
   padding:10px 10;
   display: flex; /* Flexboxの利用 */
   justify-content: center; /* 子要素の横並び・中央寄せ */
+  font-size: 14px;
 }
 
 .title-box{
@@ -98,17 +99,60 @@ header {
 }
 
 .show-bookdata{
-  padding:15px;
+  padding:30px;
 }
 
 .title-data{
   padding-bottom:30px;
 }
 
-.show-function{
-  display:inline-block;
+.show-fnc-btn{
+  display: flex; /* Flexboxの利用 */
+  font-size: 14px;
 }
 
-.edit-btn{
-  border-right: 1px solid black
+.show-edit-btn{
+  border-right: 1px solid black;
+  padding: 0 5px;
+}
+
+.show-back-btn{
+  padding: 0 5px;
+}
+
+.edit-fnc-btn{
+  display: flex;/* Flexboxの利用 */
+  padding:5px 0;
+  font-size: 14px;
+}
+
+.edit-show-btn{
+  border-right: 1px solid black;
+  padding: 0 5px;
+}
+
+.edit-back-btn{
+  padding: 0 5px;
+}
+
+.Update-btn{
+  width:100px;
+  height:20px;
+}
+
+.flash{
+  margin:15px;
+  color:green;
+  font-size: 14px;
+}
+
+.top-inf{
+  padding:15px;
+  line-height:3;
+  font-size: 13px;
+}
+
+.link-inf{
+  padding:0 10px ;
+  font-size: 13px;
 }
