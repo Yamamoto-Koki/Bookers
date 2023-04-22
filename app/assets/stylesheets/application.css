@@ -13,3 +13,102 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  color:black;
+}
+
+body{
+  padding: 30px;
+}
+
+header {
+  width: 750px;
+  padding: 0;
+  margin: 0;
+}
+
+.table-box{
+  width: 750px;
+  padding:10px 10;
+  margin: 10px;
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 子要素の横並び・中央寄せ */
+}
+
+.title-name{
+  width: 200px;
+  text-align: center;
+}
+
+.body-name{
+  width:400px;
+  text-align: center;
+}
+
+.function-blank{
+  width:150px;
+  text-align: center;
+}
+
+.books-information{
+  width: 750px;
+  padding:10px 10;
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 子要素の横並び・中央寄せ */
+}
+
+.title-box{
+  width: 200px;
+  margin:2px;
+  display:frex;
+  flex-direction:column-reverse;
+}
+
+.body-box{
+  width:400px;
+  margin: 2px;
+  display:frex;
+  flex-direction:column-reverse;
+}
+
+.function-box{
+  width:150px;
+  margin: 1px;
+  display:frex;
+  flex-direction:column-reverse;
+}
+
+.New-book{
+  margin:15px 0;
+}
+
+.New-Title{
+  margin:5px 0;
+}
+.New-Body{
+  margin:5px 0;
+}
+
+.submit-btn{
+  width:100px;
+  height:25px;
+}
+
+.show-bookdata{
+  padding:15px;
+}
+
+.title-data{
+  padding-bottom:30px;
+}
+
+.show-function{
+  display:inline-block;
+}
+
+.edit-btn{
+  border-right: 1px solid black
+}

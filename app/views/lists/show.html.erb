@@ -1,7 +1,20 @@
-<p>Tile:<%= @list.title %></p>
+<div class="show-bookdata">
+  <p class="title-data">
+    <b>Title:</b>
+    <%= @list.title %>
+  </p>
 
-<p>Body:<%= @list.body %></p>
+  <p class=body-data>
+    <b>Body:</b>
+    <%= @list.body %>
+  </p>
+</div>
 
-
-<%= link_to "edit", edit_list_path(@list.id) %>
-<%= link_to "back", '/lists' %>
+<div class= show-function>
+  <p class=edit-btn>
+    <%= link_to "edit", edit_list_path(@list.id) %>
+  </p>
+  <p>
+    <%= link_to "back", '/lists' %>
+  </p>
+</div>

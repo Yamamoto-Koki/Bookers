@@ -1,38 +1,59 @@
+
+<body>
+<header>
 <h1>Books</h1>
+</header>
+
+<div class="table-box">
+<h5 class="title-name">Title</h5>
+<h5 class="body-name">Body</h5>
+<h5 class="function-blank"></h5>
+</div>
 
 <% @lists.each do |list| %>
 
-  <p>タイトル</p>
-  <span>
+<div class="books-information">
+  <div class="title-box">
     <%= list.title %>
+  </div>
+  <div class="body-box">
     <%= list.body %>
+  </div>
+  <div class="function-box">
+    <%= link_to "Show", list_path(list.id) %>
 
-    <%= link_to "show", list_path(list.id) %>
+    <%= link_to "Edit", edit_list_path(list.id) %>
 
-    <%= link_to "edit", edit_list_path(list.id) %>
-
-    <%= link_to "destroy", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %>
-  </span>
+    <%= link_to "Destroy", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %>
+  </div>
+</div>
 
 <% end %>
 
+<div class="New-book">
+  <h3>New book</h3>
+  <% if @list.errors.any? %>
+    <%= @list.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <!-- form_with部分 -->
+  <%= form_with model: @list, url: '/lists', method: :post do |f| %>
+  <div class="New-Title">
+    <p>Title</p>
+    <%= f.text_field :title %>
+  </div>
 
-<h1>New book</h1>
-<% if @list.errors.any? %>
-  <%= @list.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @list.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <div class="New-Body">
+    <p>Body</p>
+    <%= f.text_area :body %>
+  </div>
+  <div class="New-Submit">
+    <%= f.submit 'Create Book' ,class:"submit-btn"%>
+  </div>
+</div>
 <% end %>
-<!-- form_with部分 -->
-<%= form_with model: @list, url: '/lists', method: :post do |f| %>
-  <h4>title</h4>
-  <%= f.text_field :title %>
-
-  <h4>body</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
-<% end %>
+</body>
