@@ -7,36 +7,41 @@
 <h1>Books</h1>
 </header>
 
-<div class="table-box">
-<h5 class="title-name">Title</h5>
-<h5 class="body-name">Body</h5>
-<h5 class="function-blank"></h5>
-</div>
-
-<% @lists.each do |list| %>
-
-<div class="books-information">
-  <div class="title-box">
-    <%= list.title %>
-  </div>
-  <div class="body-box">
-    <%= list.body %>
-  </div>
-  <div class="function-box">
-    <%= link_to "Show", list_path(list.id) %>
-
-    <%= link_to "Edit", edit_list_path(list.id) %>
-
-    <%= link_to "Destroy", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %>
-  </div>
-</div>
-
-<% end %>
+<table>
+  <thead>
+    <tr class="table-box">
+      <th class="title-name">Title</th>
+      <th class="body-name">Body</th>
+      <th class="function-blank"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @lists.each do |list| %>
+  <tr class="books-information">
+    <td class="title-box">
+      <%= list.title %>
+    </td>
+    <td class="body-box">
+      <%= list.body %>
+    </td>
+    <td class="function-box">
+      <%= link_to "Show", list_path(list.id) %>
+  
+      <%= link_to "Edit", edit_list_path(list.id) %>
+  
+      <%= link_to "Destroy", destroy_list_path(list.id), method: :delete, "data-confirm" => "Are you sure？" %>
+    </td>
+  </tr>
+  
+  <% end %>
+  <tbody>
+</table>
 
 <div class="New-book">
   <h3>New book</h3>
   <% if @list.errors.any? %>
-    <%= @list.errors.count %>件のエラーが発生しました
+    <%= @list.errors.count %>error occurred
     <ul>
       <% @list.errors.full_messages.each do |message| %>
         <li><%= message %></li>
